@@ -1,2 +1,31 @@
 # flask-MSQL-Nginx-Docker
 flask-MSQL-JWT Auth-Docker-Nginx
+
+
+
+flask_auth_app/
+│
+├── app.py                  # App entry point
+├── config.py               # App configuration
+├── extensions.py           # SQLAlchemy init
+│
+├── models/
+│   └── user.py             # User model
+│
+├── auth/
+│   ├── routes.py           # Login / Signup / Logout routes
+│   ├── decorators.py       # JWT decorator
+│
+├── main/
+│   └── routes.py           # Home / Dashboard routes
+│
+├── templates/
+│   ├── login.html
+│   ├── register.html
+│   └── home.html
+|
+├── utils/
+│   ├── db_wait.py          # 👈 MySQL wait happens here
+|
+└── requirements.txt
+
