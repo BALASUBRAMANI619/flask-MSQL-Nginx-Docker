@@ -1,0 +1,41 @@
+/* General */
+body {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Auth Card */
+.auth-card {
+    border-radius: 10px;
+    border: none;
+}
+
+.auth-card .form-control {
+    border-radius: 6px;
+}
+
+/* Footer */
+.footer {
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

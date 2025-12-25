@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  webflask:
+    build: .
+    container_name: flask-web
+    env_file:
+      - .env
+    expose:
+      - 5000
+    depends_on:
+      - db
+    environment:
+      - FLASK_ENV=development
+    restart: always
+
+  db:
+    image: mysql:8.0
+    container_name: db
+    env_file:
+      - .env
+    restart: always
+    expose:
+      - 3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  nginx_web:
+    image: nginx
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - webflask
+    restart: always
+
+volumes:
+  mysql_data:
